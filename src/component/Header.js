@@ -1,49 +1,40 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import './Header.css';
-// import logo from './logo.jpeg';
-
-// const Header = () => {
-//   return (
-//     <header className="header"> 
-//       <div className="logo">
-//         <Link to="/"> <img src={logo} alt="Logo" /></Link>
-//       </div>
-//       <nav className="nav-links">
-//         <Link to="/feed">Feed</Link>
-//         <Link to="/books">Books</Link>
-//         <Link to="/about">About</Link>
-//         <Link to="/contact">Contact</Link>
-//         {/* <Link to="/counter">Counter</Link> */}
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
 import React from 'react';
-import './Header.css'; // Ensure this CSS file is created
+import './Header.css';
 import logo from './logo.jpeg';
+import { useLocation, Link } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
-    <header className="header-container">
+    <header className={`header-container ${isHome ? 'home-bg' : 'other-bg'}`}>
       <div className="logo-container">
-        <a href="/" className="logo-link">
+        <Link to="/" className="logo-link">
           <img src={logo} alt="Logo" className="logo" />
-        </a>
+        </Link>
       </div>
       <nav className="nav-container">
-      <a href="/" className="navs-link">Home</a>
-        <a href="/feed" className="navs-link">Feed</a>
-        <a href="/books" className="navs-link">Books</a>
-        <a href="/about" className="navs-link">About</a>
-        <a href="/contact" className="navs-link">Contact</a>
+        <Link to="/" className={`navs-link ${location.pathname === '/' ? 'active' : ''}`}>
+          <i className="fas fa-home"></i> Home
+        </Link>
+        <Link to="/books" className={`navs-link ${location.pathname === '/books' ? 'active' : ''}`}>
+          <i className="fas fa-book"></i> Books
+        </Link>
+        <Link to="/feed" className={`navs-link ${location.pathname === '/feed' ? 'active' : ''}`}>
+          <i className="fas fa-rss"></i> Feeds
+        </Link>
+        <Link to="/about" className={`navs-link ${location.pathname === '/about' ? 'active' : ''}`}>
+          <i className="fas fa-info-circle"></i> About Us
+        </Link>
+        <Link to="/contact" className={`navs-link ${location.pathname === '/contact' ? 'active' : ''}`}>
+          <i className="fas fa-envelope"></i> Contact Us
+        </Link>
       </nav>
     </header>
   );
 };
 
 export default Header;
+
+

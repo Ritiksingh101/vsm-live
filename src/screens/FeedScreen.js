@@ -86,8 +86,8 @@ const FeedScreen = () => {
 
   return (
     <>
+    <Header />
     <div>
-      <Header />
       <h1 className="my-4">Feed Screen</h1>
 
       <div className="d-flex justify-content-center mb-4">
