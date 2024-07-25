@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from '../component/Header';
+import Slider from '../component/Slider';
 
 function HomeScreen() {
   return (
     <div>
       <Header/>
-      <h1>Hello, this is My Home Page Component!</h1>
+      <Slider/>
+      <h1>Welcome to Book Store</h1>
     </div>
   );
 }
