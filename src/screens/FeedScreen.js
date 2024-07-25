@@ -73,6 +73,7 @@ import './FeedStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import data from '../data/data';
+import Footer from '../component/Footer';
 
 const FeedScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -84,6 +85,7 @@ const FeedScreen = () => {
     : data.feeds.filter(feed => feed.category === selectedCategory);
 
   return (
+    <>
     <div>
       <Header />
       <h1 className="my-4">Feed Screen</h1>
@@ -129,6 +131,8 @@ const FeedScreen = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

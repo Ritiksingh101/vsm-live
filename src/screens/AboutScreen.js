@@ -1,39 +1,104 @@
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import  Header  from "../component/Header";
+// import './AboutStyle.css';
+// import Footer from '../component/Footer';
+
+// const AboutScreen = () => {
+//   return (
+//     <>
+//     < Header />
+//    <Link to="/books">Go to book</Link>
+//    <h1>About Us</h1>
+//    <div class="paragraph">
+//      <div class="para-one">
+//        <p> <b> At Ved Science & Maths, We are on a mission to to bridge <br/> the gap between Ancient Bhartiya wisdom
+//         and modern <br/> science by fostering the "Sanatan Science Enthusiants" <br/>community. Rooted in the rich heritage 
+//         of the Sanatan <br/>Dharma, our platform aims to provide a space where <br/> individuals can come together, learn,
+//         and share <br/> knowledge that aligns with both ancient wisdom and <br/> contemporary scientific understanding.  </b></p>
+//      </div>
+//      <div class="para-two">
+//         <p><b>Ved Science & Maths is more than just a platform; it's a <br/> community and every single member of this community <br/> is called
+//          a "Sanatan Science Enthusiants". Our platform <br/> serves as a hub for curious minds to learn from each <br/> other. Here, all enthusiants
+//          can read 80+ free e-Books.</b>
+//         </p>
+//         <div class="para-three">
+//          <p><b>
+//            Become a part of our Sanatan Science Enthusiants  <br/>community and embark on a journey of exploring and<br/> learning 
+//            the Ancient wisdom. Let's explore the universe's <br/> mysteries together and uncover the connections that<br/>      unite us all.
+//            </b></p>
+//         </div>
+//         <div class="para-four">
+//          <p><b>Connect with Ved Science & Maths and be a Sanatan<br/> Science Enthusiants.</b> </p>
+//         </div>
+//      </div>
+//    </div>
+//    <Footer/>
+//  </>
+//   );
+// };
+
+// export default AboutScreen;
+
+
+
+// About.js
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import  Header  from "../component/Header";
 import './AboutStyle.css';
+import Header from '../component/Header'
+import Footer from '../component/Footer'
 
-const AboutScreen = () => {
+export default function AboutScreen() {
   return (
-    <div>
-    < Header />
-   <Link to="/books">Go to book</Link>
-   <h1>About Us</h1>
-   <div class="paragraph">
-     <div class="para-one">
-       <p> <b> At Ved Science & Maths, We are on a mission to to bridge <br/> the gap between Ancient Bhartiya wisdom
-        and modern <br/> science by fostering the "Sanatan Science Enthusiants" <br/>community. Rooted in the rich heritage 
-        of the Sanatan <br/>Dharma, our platform aims to provide a space where <br/> individuals can come together, learn,
-        and share <br/> knowledge that aligns with both ancient wisdom and <br/> contemporary scientific understanding.  </b></p>
-     </div>
-     <div class="para-two">
-        <p><b>Ved Science & Maths is more than just a platform; it's a <br/> community and every single member of this community <br/> is called
-         a "Sanatan Science Enthusiants". Our platform <br/> serves as a hub for curious minds to learn from each <br/> other. Here, all enthusiants
-         can read 80+ free e-Books.</b>
-        </p>
-        <div class="para-three">
-         <p><b>
-           Become a part of our Sanatan Science Enthusiants  <br/>community and embark on a journey of exploring and<br/> learning 
-           the Ancient wisdom. Let's explore the universe's <br/> mysteries together and uncover the connections that<br/>      unite us all.
-           </b></p>
+    <>
+    <Header/>
+    <div className="about-container">
+      <header className="about-header">
+        <h1>About Us</h1>
+        <p>Discover more about our journey, mission, and values.</p>
+      </header>
+      
+      <section className="about-section">
+        <div className="about-image-wrapper">
+          <img src="/images/about-1.jpeg" alt="Our Team" className="about-image" />
         </div>
-        <div class="para-four">
-         <p><b>Connect with Ved Science & Maths and be a Sanatan<br/> Science Enthusiants.</b> </p>
+        <div className="about-content">
+          <h2>Our Journey</h2>
+          <p>
+            Our story began in 2010, with a small team of passionate individuals who wanted to make a difference in the world of technology and education. Over the years, we have grown into a dedicated team that strives to deliver quality content and services to our audience.
+          </p>
         </div>
-     </div>
-   </div>
- </div>
+      </section>
+      
+      <section className="about-section">
+        <div className="about-content">
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to provide insightful news and historical knowledge to curious minds. We believe in the power of information and strive to create a platform that delivers quality content to our audience.
+          </p>
+        </div>
+        <div className="about-image-wrapper">
+          <img src="/images/about-2.jpg" alt="Mission" className="about-image" />
+        </div>
+      </section>
+      
+      <section className="about-section">
+        <div className="about-image-wrapper">
+          <img src="/images/about-1.jpeg" alt="Values" className="about-image" />
+        </div>
+        <div className="about-content">
+          <h2>Our Values</h2>
+          <ul>
+            <li>Integrity: We believe in doing the right thing, always.</li>
+            <li>Innovation: We are constantly seeking new ways to improve and innovate.</li>
+            <li>Commitment: We are dedicated to delivering quality content and services.</li>
+            <li>Community: We believe in the power of community and strive to build a strong and supportive network.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <Footer/>
+    </>
   );
-};
-
-export default AboutScreen;
+}

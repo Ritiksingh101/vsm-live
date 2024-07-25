@@ -1,8 +1,64 @@
-.ContactScreen{
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    /* min-height: 100vh; */
+}
+
+.contact-form {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
     text-align: center;
 }
 
-a{
-    color: black;
-    text-decoration: none;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: calc(100% - 0px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    width: calc(100% - 0px);
+    padding: 10px;
+    /* background-color: linear-gradient(to right, #f57139, #f3b118); */
+    background: linear-gradient(to right, #f57139, #f3b118);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #d95b31, #e1a017);
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 import './BookScreen.css';
 import Header from "../component/Header";
+import Footer from '../component/Footer';
 
 function BookScreen() {
 
@@ -52,6 +53,7 @@ function BookScreen() {
   };
 
   return (
+    <>
     <div>
       < Header />
       {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -89,6 +91,8 @@ function BookScreen() {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

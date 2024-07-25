@@ -1,29 +1,202 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import  Header  from "../component/Header";
+// import React, { useState } from 'react';
+// import emailjs from 'emailjs-com';
+// import './ContactStyle.css';
+// import Header from '../component/Header';
+
+// const ContactScreen = () => {
+//   const [formData, setFormData] = useState({
+//    user_name: '',
+//    user_email: '',
+//     message: '',
+//   });
+
+//   const handleChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     emailjs
+//       .sendForm(
+//         'service_6ipg0j9',
+//         'template_jinmg7r',
+//         formData,{
+//          publicKey: 'pBBGnjBBdFaBeMqYT'}
+//       )
+//       .then(
+//         (result) => {
+//           console.log(result.text);
+//           alert('Message Sent!');
+//         },
+//         (error) => {
+//           console.log(error.text);
+//           alert('Message Not Sent!');
+//         }
+//       );
+
+//     setFormData({
+//       name: '',
+//       email: '',
+//       message: '',
+//     });
+//   };
+
+//   return (
+//    <>
+//    <Header/>
+//     <div className="contact-form-container">
+//       <form className="contact-form" onSubmit={handleSubmit}>
+//         <h2>Contact Us</h2>
+//         <div className="form-group">
+//           <label htmlFor="name">Name:</label>
+//           <input
+//             type="text"
+//             id="name"
+//             name="user_name"
+//             value={formData.user_name}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="email">Email:</label>
+//           <input
+//             type="email"
+//             id="email"
+//             name="user_email"
+//             value={formData.user_email}
+//             onChange={handleChange}
+//             required
+//           />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="message">Message:</label>
+//           <textarea
+//             id="message"
+//             name="message"
+//             value={formData.message}
+//             onChange={handleChange}
+//             required
+//           ></textarea>
+//         </div>
+//         <button type="submit">Send</button>
+//       </form>
+//     </div>
+//     </>
+//   );
+// };
+
+// export default ContactScreen;
+
+
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './ContactStyle.css';
+import Header from '../component/Header';
+import Footer from '../component/Footer';
 
 const ContactScreen = () => {
-    return(
-        <div>
-          <Header/>
-          <h1>Contact</h1>
-          <div class="ContactScreen">
-             <div class="para-one"> <br/>
-                <p><b>Feel free to get in touch with us for any brand <br/>
-                collaboration or promotional opportunities at our <br/>
-                Gmail address: vedscienceandmaths@gmail.com</b></p>
-             </div>
-             <div class="para-one">
-              <p><b> We are excited to explore mutually beneficial <br/>
-                partnerships and creative collaborations that align with <br/>
-                our mission and values. <br/>
-                Let's work together to create impactful and engaging <br/>
-                content for our community. <br/>
-                Looking forward to hearing from you!</b></p>
-             </div>
-          </div>
-        </div>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const emailParams = {
+      to_name: 'Kundan Yadav',  // Replace with your name or dynamically set it
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs.send(
+      'service_6ipg0j9', // Replace with your Service ID
+      'template_jinmg7r', // Replace with your Template ID
+      emailParams,
+      'pBBGnjBBdFaBeMqYT' // Replace with your User ID
     )
-}
+    .then(
+      (result) => {
+        console.log(result.text);
+        alert('Message Sent!');
+      },
+      (error) => {
+        console.log(error.text);
+        alert('Message Not Sent!');
+      }
+    )
+    .finally(() => {
+      setLoading(false);
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    });
+  };
+
+  return (
+   <>
+   <Header/>
+    <div className="contact-form-container">
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <h2>Contact Us</h2>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Sending...' : 'Send'}
+        </button>
+      </form>
+    </div>
+    <Footer/>
+    </>
+  );
+};
+
 export default ContactScreen;
