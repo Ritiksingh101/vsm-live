@@ -6,7 +6,6 @@ import AboutScreen from './screens/AboutScreen';
 import ContactScreen from './screens/ContactScreen';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Counter } from './screens/Counter';
 import HomeScreen from './screens/HomeScreen';
 import PdfViewer from './screens/PdfViewer'
 
@@ -20,7 +19,6 @@ function App() {
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/books" element={<BookScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
-        <Route path="/counter" element={<Counter/>} />
         <Route path="/pdf-viewer" element={<PdfViewer />} />
       </Routes>
     </Router>
