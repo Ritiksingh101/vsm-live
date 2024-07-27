@@ -11,6 +11,10 @@ function BookScreen() {
     fetchDataRow();
   }, []);
 
+  function sanitizeUrl(url) {
+    return url.replace('/books/books/', '/books/');
+  }
+
   function fetchDataRow() {
     fetch("https://api.vedscienceandmaths.com/api/category", {
       method: 'GET',
@@ -21,7 +25,15 @@ function BookScreen() {
     })
       .then(response => response.json())
       .then(data => {
-        setCategories(data);
+        // Sanitize the book URLs
+        const sanitizedData = data.map(category => ({
+          ...category,
+          books: category.books.map(book => ({
+            ...book,
+            book: sanitizeUrl(book.book),
+          })),
+        }));
+        setCategories(sanitizedData);
         if (data.error) {
           alert('Error Password or Username', data);
         }
@@ -58,7 +70,9 @@ function BookScreen() {
                   <ul>
                     {category.books.map(book => (
                       <li key={book.id}>
-                        <a href={book.book} target="_blank" rel="noopener noreferrer">{book.name}</a>
+                        <a href={book.book} target="_blank" rel="noopener noreferrer">
+                          {book.name}
+                        </a>
                       </li>
                     ))}
                   </ul>
