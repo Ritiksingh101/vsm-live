@@ -1,4 +1,4 @@
-.header-container {
+/* .header-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -27,7 +27,7 @@
 
 .navs-link {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -47,6 +47,7 @@
 }
 
 .navs-link.active {
+    color: white;
     background-color: black;
 }
 
@@ -65,5 +66,111 @@
     .logo-container {
         margin-right: 0;
         margin-bottom: 1rem;
+    }
+} */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 2rem;
+    /* Reduced padding */
+    background: linear-gradient(to bottom, rgb(245, 113, 57), rgb(243, 177, 24));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+    /* Reduced margin */
+}
+
+.logo {
+    max-height: 80px;
+    width: auto;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.nav-container {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.navs-link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.navs-name {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+}
+
+.navs-link i {
+    font-size: 1.5rem;
+}
+
+.navs-link:hover {
+    color: #007bff;
+}
+
+.navs-link.active {
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    .logo-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        display: none;
+    }
+    .nav-container.open {
+        display: flex;
     }
 }

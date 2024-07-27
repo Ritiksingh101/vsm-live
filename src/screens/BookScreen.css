@@ -1,17 +1,23 @@
 .App {
     font-family: Arial, sans-serif;
     padding: 20px;
-  }
-  
-  .category-list {
-    /* flex-wrap: wrap; */
-    /* gap: 10px; */
-    /* margin-bottom: 20px;  */
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-  }
-  
-  .category-list button {
-    padding: 1% 2%;
+}
+
+.category-item {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.category-list button {
+    padding: 10px 20px;
     background-color: #eba858f5;
     color: black;
     border: none;
@@ -19,73 +25,87 @@
     font-family: auto;
     font-size: 30px;
     text-transform: uppercase;
-    width: 55%;
+    width: 100%;
     border-radius: 40px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  }
-  
-  .category-list button:hover {
+.category-list button.active {
     background-color: #fabe75f5;
-  }
-  
-  .book-list {
+}
+
+.category-list button:hover {
+    background-color: #fabe75f5;
+}
+
+.book-list {
     margin-top: 20px;
-  }
-  
-  .book-list h2, h1 {
+}
+
+.book-list h2,
+h1 {
     margin-bottom: 10px;
     text-align: center;
-  }
-  
-  .book-list ul {
+}
+
+.book-list ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .book-list ul li {
-    padding: 1% 2%;
+}
+
+.book-list ul li {
+    padding: 10px 20px;
     background-color: #fec98af5;
     border: none;
     cursor: pointer;
     font-family: auto;
     font-size: 25px;
     text-transform: uppercase;
-    width: 45%;
+    width: 100%;
     border-radius: 35px;
-    margin: 20px auto;
+    margin: 10px 0;
     text-align: center;
-  }
-  
-  .book-list ul li a {
+}
+
+.book-list ul li a {
     text-decoration: none;
     color: black;
-  }
-  
-  .book-list ul li:hover {
-    /* text-decoration: underline; */
+}
+
+.book-list ul li:hover {
     background-color: #fdd2a1f5;
+}
 
-  }
-  .button-add {
-    margin-left: 20;
-  }
-  .button-test {
-    justify-content: space-between;
-  } 
-  
-   .button-add {
+.button-add {
     font-weight: 700;
+}
 
-  }
-  
- 
+@media (max-width: 767px) {
+    .category-list button {
+        font-size: 16px;
+    }
+    .book-list ul li {
+        font-size: 14px;
+    }
+}
 
-  .category-list .row div .btnColor {
-    display: inline-flex;
-    justify-content: space-between;
-  }
+@media (min-width: 768px) {
+    .category-list button {
+        font-size: 20px;
+    }
+    .book-list ul li {
+        font-size: 18px;
+    }
+}
 
-  
-  
+@media (min-width: 992px) {
+    .category-list button {
+        font-size: 22px;
+    }
+    .book-list ul li {
+        font-size: 20px;
+    }
+}
