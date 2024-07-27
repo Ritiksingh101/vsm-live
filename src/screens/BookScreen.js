@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BookScreen.css';
 import Header from "../component/Header";
 import Footer from '../component/Footer';
@@ -6,6 +7,7 @@ import Footer from '../component/Footer';
 function BookScreen() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchDataRow();
@@ -47,6 +49,10 @@ function BookScreen() {
     setSelectedCategory(selectedCategory === category ? null : category);
   };
 
+  const handleBookClick = (book) => {
+    navigate('/pdf-viewer', { state: { bookName: book.name, pdfUrl: book.book } });
+  };
+
   return (
     <>
       <Header />
@@ -70,9 +76,9 @@ function BookScreen() {
                   <ul>
                     {category.books.map(book => (
                       <li key={book.id}>
-                        <a href={book.book} target="_blank" rel="noopener noreferrer">
+                        <button  onClick={() => handleBookClick(book)}>
                           {book.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -88,3 +94,5 @@ function BookScreen() {
 }
 
 export default BookScreen;
+
+

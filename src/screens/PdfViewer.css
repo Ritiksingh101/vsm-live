@@ -1,0 +1,55 @@
+.pdf-viewer-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pdf-header {
+    background: linear-gradient(to bottom, rgb(245, 113, 57), rgb(243, 177, 24));
+    padding: 15px 15px;
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.back-button {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .pdf-header {
+        padding: 8px;
+        flex-direction: column;
+    }
+    .back-button {
+        position: static;
+        margin-top: 18px;
+        margin-bottom: 3px;
+        font-size: 18px;
+    }
+    .book-title {
+        font-size: 16px;
+    }
+}
+
+.pdf-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+}

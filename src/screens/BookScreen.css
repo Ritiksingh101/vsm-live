@@ -58,9 +58,9 @@ h1 {
 
 .book-list ul li {
     padding: 10px 20px;
-    background-color: #fec98af5;
+    /* background-color: #fec98af5; */
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-family: auto;
     font-size: 25px;
     text-transform: uppercase;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .book-list ul li:hover {
-    background-color: #fdd2a1f5;
+    /* background-color: #fdd2a1f5; */
 }
 
 .button-add {
