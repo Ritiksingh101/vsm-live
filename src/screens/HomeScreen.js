@@ -11,13 +11,13 @@ function HomeScreen() {
       <Slider/>
       <main className="home-main">
         <section className="hero-section">
-          <h1>Welcome to Book Store</h1>
+          <h1 className='hover:underline decoration-white/65'>Welcome to Book Store</h1>
           <p>Your ultimate destination for discovering and purchasing the best books. Dive into our curated collection of bestsellers, new arrivals, and classic reads.</p>
-          <a href="#explore" className="cta-button">Explore Our Collection</a>
+          <a href="#explore" className="bta-button">Explore Our Collection</a>
         </section>
 
         <section id="featured-books" className="featured-books">
-          <h2>Featured Books</h2>
+          <h2 className='hover:underline decoration-black/65'>Featured Books</h2>
           <div className="book-grid">
             <div className="book-item">
               <img src="/images/about-1.jpeg" alt="Book 1" />

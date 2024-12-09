@@ -41,10 +41,10 @@ export default function Footer() {
 
           <div className='footer-col'>
             <h6 className='footer-title'>Products</h6>
-            <p><a href='#!' className='footer-link'>Angular</a></p>
-            <p><a href='#!' className='footer-link'>React</a></p>
-            <p><a href='#!' className='footer-link'>Vue</a></p>
-            <p><a href='#!' className='footer-link'>Laravel</a></p>
+            <p><a href='#!' className='footer-link'>Books</a></p>
+            <p><a href='#!' className='footer-link'>Cards</a></p>
+            <p><a href='#!' className='footer-link'>Instrument</a></p>
+            <p><a href='#!' className='footer-link'>E-Notes</a></p>
           </div>
 
           <div className='footer-col'>
