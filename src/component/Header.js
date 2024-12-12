@@ -39,8 +39,9 @@
 
 import React, { useState } from 'react';
 import './Header.css';
-import logo from './logo.jpeg';
+import logo_animate from '../logo_animate/logo_animate.mp4';
 import { useLocation, Link } from 'react-router-dom';
+import { FaChalkboardTeacher } from "react-icons/fa";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,43 +56,64 @@ const Header = () => {
     <header className={`header-container ${isHome ? 'home-bg' : 'other-bg'}`}>
       <div className="logo-container">
         <Link to="/" className="logo-link">
-          <img src={logo} alt="Logo" className="logo" />
+          {/* <img src={logo_animate} alt="Logo" className="logo" /> */}
+          {/* <video autoPlay loop muted className="logo">
+            <source src={logo_animate} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video> */}
+          <video autoPlay loop muted className="w-28 h-auto rounded-[50%] mb-[6px]">
+            <source src={logo_animate} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </Link>
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <i className="fas fa-bars"></i>
         </button>
       </div>
       <nav className={`nav-container ${menuOpen ? 'open' : ''}`}>
+
         <Link to="/" className={`navs-link ${location.pathname === '/' ? 'active' : ''}`}>
           <div className="icon-container">
             <i className="fas fa-home"></i>
           </div>
          <span className='navs-name'>Home</span>
         </Link>
+
+        <Link to="/courses" className={`navs-link ${location.pathname === '/courses' ? 'active' : ''}`}>
+          <div className="icon-container">
+          <FaChalkboardTeacher />
+          </div>
+          <span className='navs-name'>Courses</span>
+        </Link>
+
         <Link to="/books" className={`navs-link ${location.pathname === '/books' ? 'active' : ''}`}>
           <div className="icon-container">
             <i className="fas fa-book"></i>
           </div>
           <span className='navs-name'>Books</span>
         </Link>
+
         <Link to="/feed" className={`navs-link ${location.pathname === '/feed' ? 'active' : ''}`}>
           <div className="icon-container">
             <i className="fas fa-rss"></i>
           </div>
           <span className='navs-name'>Feeds</span>
         </Link>
+
         <Link to="/about" className={`navs-link ${location.pathname === '/about' ? 'active' : ''}`}>
           <div className="icon-container">
             <i className="fas fa-info-circle"></i>
           </div>
           <span className='navs-name'>About Us</span>
         </Link>
+
         <Link to="/contact" className={`navs-link ${location.pathname === '/contact' ? 'active' : ''}`}>
           <div className="icon-container">
             <i className="fas fa-envelope"></i>
           </div>
           <span className='navs-name'>Contact Us</span>
         </Link>
+
       </nav>
     </header>
   );

@@ -5,26 +5,6 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer className='footer'>
-      <section className='footer-section'>
-        <div className='social-text'>
-          <span>Get connected with us on social networks:</span>
-        </div>
-
-        <div className='social-links'>
-          <a href='https://www.facebook.com/vedscienceandmaths/' className='footer-link text-primary'>
-            <FaFacebookF />
-          </a>
-          <a href='https://www.youtube.com/@vedscienceandmaths' className='footer-link text-danger'>
-            <FaYoutube />
-          </a>
-          <a href='https://www.instagram.com/ved_scince_and_maths?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' className='footer-link'>
-            <FaInstagram />
-          </a>
-          <a href='https://x.com/jai_rry' className='footer-link text-primary'>
-            <FaTwitter />
-          </a>
-        </div>
-      </section>
 
       <section className='footer-container'>
         <div className='footer-row'>
@@ -77,12 +57,33 @@ export default function Footer() {
         </div>
       </section>
 
-      <div className='footer-bottom'>
+      {/* <div className='footer-bottom'>
         © 2024 Copyright:
         <a className='footer-link' href='https://mdbootstrap.com/'>
           vedscienceandmaths.com
         </a>
-      </div>
+      </div> */}
+
+      <section className='footer-section'>
+        <div className='social-text'>
+          <span>Get connected with us on social networks:</span>
+        </div>
+
+        <div className='social-links'>
+          <a href='https://www.facebook.com/vedscienceandmaths/' className='footer-link text-primary'>
+            <FaFacebookF />
+          </a>
+          <a href='https://www.youtube.com/@vedscienceandmaths' className='footer-link text-danger'>
+            <FaYoutube />
+          </a>
+          <a href='https://www.instagram.com/ved_scince_and_maths?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' className='footer-link'>
+            <FaInstagram />
+          </a>
+          <a href='https://x.com/jai_rry' className='footer-link text-primary'>
+            <FaTwitter />
+          </a>
+        </div>
+      </section>
     </footer>
   );
 }

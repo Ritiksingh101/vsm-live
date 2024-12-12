@@ -8,6 +8,7 @@ import ContactScreen from './screens/ContactScreen';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import PdfViewer from './screens/PdfViewer'
+import CourseSection from './screens/CourseSection';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/feed" element={<FeedScreen />} />
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/books" element={<BookScreen />} />
+        <Route path="/courses" element={<CourseSection />} />
         <Route path="/contact" element={<ContactScreen />} />
         <Route path="/pdf-viewer" element={<PdfViewer />} />
       </Routes>
