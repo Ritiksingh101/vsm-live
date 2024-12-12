@@ -42,6 +42,7 @@ import './Header.css';
 import logo_animate from '../logo_animate/logo_animate.mp4';
 import { useLocation, Link } from 'react-router-dom';
 import { FaChalkboardTeacher } from "react-icons/fa";
+import logo_gif from '../logo_animate/logo.gif'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,14 +58,7 @@ const Header = () => {
       <div className="logo-container">
         <Link to="/" className="logo-link">
           {/* <img src={logo_animate} alt="Logo" className="logo" /> */}
-          {/* <video autoPlay loop muted className="logo">
-            <source src={logo_animate} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video> */}
-          <video autoPlay loop muted className="w-28 h-auto rounded-[50%] mb-[6px]">
-            <source src={logo_animate} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+           <img src={logo_gif} alt="Logo" className="w-28 h-auto rounded-[50%] mb-[6px]" />
         </Link>
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <i className="fas fa-bars"></i>
