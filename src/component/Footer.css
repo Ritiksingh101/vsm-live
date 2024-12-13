@@ -30,8 +30,8 @@
 }
 
 .social-links a:hover {
-    transform: scale(1.2);
-    font-size: 25px;
+    transform: scale(1.8);
+    /* font-size: 25px; */
 }
 
 .footer-container {
