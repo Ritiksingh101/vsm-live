@@ -1,11 +1,10 @@
 import React from 'react';
 import { FaFacebookF, FaYoutube, FaInstagram, FaTwitter, FaGem, FaHome, FaEnvelope, FaPhone, FaPrint } from 'react-icons/fa';
-import './Footer.css'; 
+import './Footer.css';
 
 export default function Footer() {
   return (
     <footer className='footer'>
-
       <section className='footer-container'>
         <div className='footer-row'>
           <div className='footer-col'>
@@ -17,23 +16,30 @@ export default function Footer() {
               Ved Science & Maths: Your gateway to insightful news and historical knowledge,
               Dedicated to delivering quality newsvlog and historical content for curious minds.
             </p>
+
+            <div className='text-gray-600 mt-4'>
+              © 2024 Copyright:
+              <a className='text-gray-600' href='/'>
+                vedscienceandmaths.com
+              </a>
+            </div>
           </div>
 
-          <div className='footer-col'>
+          {/* <div className='footer-col'>
             <h6 className='footer-title'>Products</h6>
             <p><a href='#!' className='footer-link'>Books</a></p>
             <p><a href='#!' className='footer-link'>Cards</a></p>
             <p><a href='#!' className='footer-link'>Instrument</a></p>
             <p><a href='#!' className='footer-link'>E-Notes</a></p>
-          </div>
+          </div> */}
 
-          <div className='footer-col'>
+          {/* <div className='footer-col'>
             <h6 className='footer-title'>Useful links</h6>
             <p><a href='#!' className='footer-link'>Pricing</a></p>
             <p><a href='#!' className='footer-link'>Settings</a></p>
             <p><a href='#!' className='footer-link'>Orders</a></p>
             <p><a href='#!' className='footer-link'>Help</a></p>
-          </div>
+          </div> */}
 
           <div className='footer-col'>
             <h6 className='footer-title'>Contact</h6>
@@ -84,6 +90,7 @@ export default function Footer() {
           </a>
         </div>
       </section>
+
     </footer>
   );
 }

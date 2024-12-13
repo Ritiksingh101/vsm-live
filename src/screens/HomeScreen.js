@@ -3,20 +3,23 @@ import Header from '../component/Header';
 import Slider from '../component/Slider';
 import Footer from '../component/Footer';
 import './HomeScreen.css'
+import WelcomeBookSection from './WelcomeBookSection';
 
 function HomeScreen() {
   return (
     <>
-      <Header/>
-      <Slider/>
-      <main className="home-main">
+      <Header />
+      <Slider />
+      <main className="home-main ">
         <section className="hero-section ">
           <h1 className='hover:underline decoration-white/65 mt-4'>Welcome to Book Store</h1>
           <p>Your ultimate destination for discovering and purchasing the best books. Dive into our curated collection of bestsellers, new arrivals, and classic reads.</p>
+          <WelcomeBookSection/>
+
           <a href="#explore" className="bta-button">Explore Our Collection</a>
         </section>
 
-        <section id="featured-books" className="featured-books">
+        {/* <section id="featured-books" className="featured-books">
           <h2 className='hover:underline decoration-black/65'>Featured Books</h2>
           <div className="book-grid">
             <div className="book-item">
@@ -38,7 +41,7 @@ function HomeScreen() {
               <p>Rs22.99</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="cta-section">
           <h2>Join Our Community</h2>
@@ -46,7 +49,7 @@ function HomeScreen() {
           <a href="#subscribe" className="cta-button">Subscribe Now</a>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

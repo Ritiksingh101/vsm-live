@@ -84,7 +84,7 @@
     margin-right: 0.5rem;
 }
 
-.footer-bottom {
+/* .footer-bottom {
     padding: 1rem 0;
     background-color: rgba(0, 0, 0, 0.199);
     font-weight: bold;
@@ -97,7 +97,7 @@
 
 .footer-bottom a:hover {
     text-decoration: underline;
-}
+} */
 
 @media (max-width: 768px) {
     .footer-section {
