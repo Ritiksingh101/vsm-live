@@ -37,14 +37,20 @@ const Slider = () => {
   return (
     <div className="slider-container">
       <AwesomeSlider className="awesome-slider">
-        <div>
+        <div >
+          <a href='https://amzn.in/d/8qtX4ub' target='blank'>
           <img src="/images/ved_science_slider/poster1.png" alt="Slide 1" />
+          </a>
         </div>
         <div>
-          <img src="/images/ved_science_slider/poster2.png" alt="Slide 2" />
+          <a href='https://amzn.in/d/bmRINKR' target='blank' >
+          <img src="/images/ved_science_slider/poster2.png" alt="Slide 2"  />
+          </a>
         </div>
         <div>
+        <a href='https://amzn.in/d/bmRINKR' target='blank' >
         <img src="/images/ved_science_slider/poster3.png" alt="Slide 3"  />
+        </a>
         </div>
         {/* <div>
           <img src="/images/ved_science_slider/poster1.png" alt="Slide 4" />

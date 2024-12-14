@@ -43,6 +43,8 @@ import logo_animate from '../logo_animate/logo_animate.mp4';
 import { useLocation, Link } from 'react-router-dom';
 import { FaChalkboardTeacher } from "react-icons/fa";
 import logo_gif from '../logo_animate/logo.gif'
+import newlogo from '../logo_animate/newlogo.mp4'
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
