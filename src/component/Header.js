@@ -43,7 +43,7 @@ import logo_animate from '../logo_animate/logo_animate.mp4';
 import { useLocation, Link } from 'react-router-dom';
 import { FaChalkboardTeacher } from "react-icons/fa";
 import logo_gif from '../logo_animate/logo.gif'
-import newlogo from '../logo_animate/newlogo.mp4'
+import newlogo from '../logo_animate/newlogo.gif'
 
 
 const Header = () => {
@@ -60,7 +60,7 @@ const Header = () => {
       <div className="logo-container">
         <Link to="/" className="logo-link">
           {/* <img src={logo_animate} alt="Logo" className="logo" /> */}
-           <img src={logo_gif} alt="Logo" className="w-28 h-auto rounded-[50%] mb-[6px]" />
+           <img src={newlogo} alt="Logo" className="w-28 h-auto rounded-[50%] mb-[6px]" />
         </Link>
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <i className="fas fa-bars"></i>
