@@ -242,7 +242,7 @@ function BookScreen() {
                   //   ${selectedCategory === category ? 'bg-[#fabe75f5]' : 'hover:bg-[#d38b34f5]'
                   //   }`
                   // }
-                  className={`w-full px-5 py-2.5 bg-[#eba858f5] text-black 
+                  className={`w-full px-5 py-2.5 bg-[#fae4b8] text-black 
                     uppercase rounded-[40px] flex justify-between items-center
                     ${selectedCategory === category ? 'bg-[#fabe75f5]' : 'hover:bg-[#d38b34f5]'}
                     text-base sm:text-lg md:text-xl lg:text-2xl`}
@@ -268,15 +268,15 @@ function BookScreen() {
                             // className="w-full px-4 py-2.5 bg-[#fec98af5] cursor-pointer 
                             //   text-2xl uppercase rounded-[35px] my-3 text-gray-900 
                             //   text-center hover:bg-[#e1a55ff5] hover:underline"
-                            className={`w-full px-4 py-2 bg-[#fec98af5] cursor-pointer 
+                            className={`w-full px-4 py-2 bg-[#fae4b8] cursor-pointer 
                               uppercase rounded-[35px] my-3 text-gray-900 text-center 
                               text-sm sm:text-base md:text-lg lg:text-xl 
-                              hover:bg-[#e1a55ff5] hover:underline 
-                              sm:hover:bg-[#e1a55ff5] sm:hover:underline
-                              md:hover:bg-[#e1a55ff5] md:hover:underline
-                              lg:hover:bg-[#e1a55ff5] lg:hover:underline`
+                              hover:bg-[#d38b34f5] hover:underline 
+                              sm:hover:bg-[#d38b34f5] sm:hover:underline
+                              md:hover:bg-[#d38b34f5] md:hover:underline
+                              lg:hover:bg-[#d38b34f5] lg:hover:underline`
                             }
-                  
+
                             key={book.id}
                           >
                             <button

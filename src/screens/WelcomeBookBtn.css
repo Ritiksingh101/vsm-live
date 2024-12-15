@@ -1,0 +1,36 @@
+
+.button_slide {
+    border: 2px solid rgb(3, 3, 3);
+    padding: 1.28571em 2.57143em;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #0a0a0a;
+  animation: leave 0.4s forwards;
+}
+
+.slide_right:hover {
+    animation: hover 0.4s forwards;
+}
+
+@keyframes hover {
+    from {
+        box-shadow: inset 0 0 0 0.01px #000000;
+    }
+    to {
+        box-shadow: inset 13.79928em 0 0 0.01px #000000;
+        color: #fff;
+    }
+}
+
+@keyframes leave {
+    from {
+        box-shadow: inset -13.79928em 0 0 0.01px #000000;
+        color: #fff;
+    }
+    to {
+        box-shadow: inset 0 0 0 0.01px #000000;
+    }
+}
