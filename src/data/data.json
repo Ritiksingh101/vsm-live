@@ -1,0 +1,88 @@
+[
+    {
+      "id": 1,
+      "feed_cat_id": 1,
+      "title": "hello how to make@#  vb",
+      "slug": "hello-how-to-make-at-vb",
+      "description": "\u003Cp\u003Eszxfdfcggbhjn\u003C/p\u003E",
+      "status": 0,
+      "tags": [
+        "bvb",
+        "hjhgvj",
+        "nvjvh"
+      ],
+      "main_image": "https://st2.depositphotos.com/1186248/5903/i/450/depositphotos_59038425-stock-photo-demo.jpg",
+      "thumbnail_image": "thumbnail/01JHJAJ77VGXEN2ZB1HH951YS7.jpg",
+      "created_at": "2025-01-14T11:53:12.000000Z",
+      "updated_at": "2025-01-14T11:53:12.000000Z"
+    },
+    {
+      "id": 2,
+      "feed_cat_id": 2,
+      "title": "How to bake a cake",
+      "slug": "how-to-bake-a-cake",
+      "description": "\u003Cp\u003EA guide to baking a perfect cake.\u003C/p\u003E",
+      "status": 1,
+      "tags": [
+        "baking",
+        "cake",
+        "guide"
+      ],
+      "main_image": "feeds/02BAKINGGUIDE.jpg",
+      "thumbnail_image": "thumbnail/02THUMBBAKING.jpg",
+      "created_at": "2025-01-15T10:23:45.000000Z",
+      "updated_at": "2025-01-15T10:23:45.000000Z"
+    },
+    {
+      "id": 3,
+      "feed_cat_id": 3,
+      "title": "Top 10 Travel Destinations",
+      "slug": "top-10-travel-destinations",
+      "description": "\u003Cp\u003EExplore the most popular travel destinations.\u003C/p\u003E",
+      "status": 1,
+      "tags": [
+        "travel",
+        "destinations",
+        "tourism"
+      ],
+      "main_image": "feeds/03TRAVELDEST.jpg",
+      "thumbnail_image": "thumbnail/03THUMBTRAVEL.jpg",
+      "created_at": "2025-01-16T08:15:30.000000Z",
+      "updated_at": "2025-01-16T08:15:30.000000Z"
+    },
+    {
+      "id": 4,
+      "feed_cat_id": 4,
+      "title": "Best Programming Languages to Learn",
+      "slug": "best-programming-languages-to-learn",
+      "description": "\u003Cp\u003EFind out which programming languages are in demand.\u003C/p\u003E",
+      "status": 1,
+      "tags": [
+        "programming",
+        "coding",
+        "languages"
+      ],
+      "main_image": "feeds/04PROGLANG.jpg",
+      "thumbnail_image": "thumbnail/04THUMBPROGLANG.jpg",
+      "created_at": "2025-01-16T14:30:00.000000Z",
+      "updated_at": "2025-01-16T14:30:00.000000Z"
+    },
+    {
+      "id": 5,
+      "feed_cat_id": 5,
+      "title": "Healthy Recipes for a Balanced Diet",
+      "slug": "healthy-recipes-for-balanced-diet",
+      "description": "\u003Cp\u003EQuick and easy healthy recipes.\u003C/p\u003E",
+      "status": 1,
+      "tags": [
+        "health",
+        "recipes",
+        "diet"
+      ],
+      "main_image": "feeds/05HEALTHYRECIPES.jpg",
+      "thumbnail_image": "thumbnail/05THUMBHEALTHY.jpg",
+      "created_at": "2025-01-17T09:45:10.000000Z",
+      "updated_at": "2025-01-17T09:45:10.000000Z"
+    }
+  ]
+  
