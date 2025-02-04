@@ -1,71 +1,71 @@
-import Header from "../component/Header";
-import './FeedStyle.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+// import Header from "../component/Header";
+// import './FeedStyle.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import Footer from '../component/Footer';
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import Footer from '../component/Footer';
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 
-const FeedScreen = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// const FeedScreen = () => {
+//   const [data, setData] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 
-  // Fetch data from the API
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://admin.vedscienceandmaths.com/feed');
-      setData(response.data); //
-      setLoading(false);
-    } catch (err) {
-      setError(err.message);
-      setLoading(false);
-    }
-  };
+//   // Fetch data from the API
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get('https://admin.vedscienceandmaths.com/feed');
+//       setData(response.data); //
+//       setLoading(false);
+//     } catch (err) {
+//       setError(err.message);
+//       setLoading(false);
+//     }
+//   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
 
-  return (
-    <>
-      <Header />
-      <div className="container mt-4">
-        <h1 className="text-center mb-4">Feed Screen {JSON.stringify(data)}</h1>
+//   return (
+//     <>
+//       <Header />
+//       <div className="container mt-4">
+//         <h1 className="text-center mb-4">Feed Screen {JSON.stringify(data)}</h1>
 
-        {/* Display loading or error messages */}
-        {loading && <p className="text-center">Loading...</p>}
-        {error && <p className="text-center text-danger">Error: {error}</p>}
+//         {/* Display loading or error messages */}
+//         {loading && <p className="text-center">Loading...</p>}
+//         {error && <p className="text-center text-danger">Api Error: {error}</p>}
 
-        {/* Render feed items */}
-        {!loading && !error && data.map((feed) => (
-          <div 
-            key={feed.id} 
-            className="bg-white rounded-lg flex justify-between items-center border-t-2 border-b-2 mb-4 p-4"
-          >
-            <div className="flex flex-col items-start">
-              <h3 className="font-semibold text-blue-500">{feed.title}</h3>
-              <p className="text-gray-800 text-base font-medium leading-relaxed">
-                {feed.description}
-              </p>
-            </div>
-            <div className="w-20 h-20 rounded-[15px] overflow-hidden flex justify-center items-center">
-              <img 
-                src={feed.main_image}
-                alt={feed.title} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-      <Footer />
-    </>
-  );
-};
+//         {/* Render feed items */}
+//         {!loading && !error && data.map((feed) => (
+//           <div 
+//             key={feed.id} 
+//             className="bg-white rounded-lg flex justify-between items-center border-t-2 border-b-2 mb-4 p-4"
+//           >
+//             <div className="flex flex-col items-start">
+//               <h3 className="font-semibold text-blue-500">{feed.title}</h3>
+//               <p className="text-gray-800 text-base font-medium leading-relaxed">
+//                 {feed.description}
+//               </p>
+//             </div>
+//             <div className="w-20 h-20 rounded-[15px] overflow-hidden flex justify-center items-center">
+//               <img 
+//                 src={feed.main_image}
+//                 alt={feed.title} 
+//                 className="w-full h-full object-cover"
+//               />
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
 
-export default FeedScreen;
+// export default FeedScreen;
 
 
 // import Header from "../component/Header";
@@ -154,3 +154,71 @@ export default FeedScreen;
 // };
 
 // export default FeedScreen;
+
+
+import Header from "../component/Header";
+import './FeedStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+import Footer from '../component/Footer';
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const FeedScreen = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://admin.vedscienceandmaths.com/feed');
+      // const response = await axios.get('https://api.restful-api.dev/objects');        // test api for data is comming or not 
+      setData(Array.isArray(response.data) ? response.data : []); // Ensure data is an array
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <div className="container mt-4">
+        <h1 className="text-center mb-4">Feed Screen {JSON.stringify(data)} </h1>
+
+        {loading && <p className="text-center">Loading...</p>}
+        {error && <p className="text-center text-danger">Error: {error}</p>}
+
+        {!loading && !error && data.map((feed, index) => (
+          <div 
+            key={feed.id || index} 
+            className="bg-white rounded-lg flex justify-between items-center border-t-2 border-b-2 mb-4 p-4"
+          >
+            <div className="flex flex-col items-start">
+              <h3 className="font-semibold text-blue-500">{feed.title}</h3>
+              <p className="text-gray-800 text-base font-medium leading-relaxed">
+                {feed.description}
+              </p>
+            </div>
+            <div className="w-20 h-20 rounded-[15px] overflow-hidden flex justify-center items-center">
+              <img 
+                src={feed.main_image} 
+                alt={feed.title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default FeedScreen;
