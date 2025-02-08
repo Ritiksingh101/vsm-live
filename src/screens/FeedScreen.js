@@ -172,15 +172,22 @@ const FeedScreen = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://admin.vedscienceandmaths.com/feed');
-      // const response = await axios.get('https://api.restful-api.dev/objects');        // test api for data is comming or not 
-      setData(Array.isArray(response.data) ? response.data : []); // Ensure data is an array
+      const response = await fetch('https://admin.vedscienceandmaths.com/feed', {
+        method: 'GET',
+        mode: 'cors', 
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const result = await response.json();
+      setData(Array.isArray(result) ? result : []);
       setLoading(false);
     } catch (err) {
       setError(err.message);
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     fetchData();
@@ -190,7 +197,7 @@ const FeedScreen = () => {
     <>
       <Header />
       <div className="container mt-4">
-        <h1 className="text-center mb-4">Feed Screen {JSON.stringify(data)} </h1>
+        <h1 className="text-center mb-4">Feed Screen </h1>
 
         {loading && <p className="text-center">Loading...</p>}
         {error && <p className="text-center text-danger">Error: {error}</p>}
