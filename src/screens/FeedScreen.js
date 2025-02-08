@@ -171,14 +171,21 @@ const FeedScreen = () => {
   const [error, setError] = useState(null);
 
   const fetchData = async () => {
-    try {
-      const response = await fetch('https://admin.vedscienceandmaths.com/feed', {
-        method: 'GET',
-        mode: 'cors', 
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+    const apis = [
+      "http://localhost:4000/api/feed", // Local proxy server
+      "https://admin.vedscienceandmaths.com/feed" // Live API
+    ];
+
+  
+      try {
+        const response = await Promise.any(apis.map(api => fetch(api, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })));
+      // const response = await fetch("http://localhost:4000/api/feed");
+
       const result = await response.json();
       setData(Array.isArray(result) ? result : []);
       setLoading(false);
